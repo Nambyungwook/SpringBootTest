@@ -1,6 +1,6 @@
 package com.nbw.book.springboot.domain.posts;
 
-import com.nbw.book.springboot.domain.BaaeTimeEntity;
+import com.nbw.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts extends BaaeTimeEntity {
+public class Posts extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
