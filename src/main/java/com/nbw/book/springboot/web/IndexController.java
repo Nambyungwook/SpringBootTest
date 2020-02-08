@@ -1,5 +1,6 @@
 package com.nbw.book.springboot.web;
 
+import com.nbw.book.springboot.config.auth.LoginUser;
 import com.nbw.book.springboot.config.auth.dto.SessionUser;
 import com.nbw.book.springboot.domain.user.User;
 import com.nbw.book.springboot.service.posts.PostsService;
@@ -17,12 +18,10 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        User user = (User) httpSession.getAttribute("uesr");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
