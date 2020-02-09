@@ -38,7 +38,7 @@ deploy:
   bundle_type: zip
   application: nbw-springboot2-webservice
   deployment_group: nbw-springboot2-webservice-group
-  region: ap-notrheast-2
+  region: ap-northeast-2
   wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
